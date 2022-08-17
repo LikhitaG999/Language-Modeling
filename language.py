@@ -17,8 +17,18 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
-
+    f=open(filename,"r")
+    #print(f.read())
+    lines=f.read()
+    s = lines.split("\n")
+    list=[]
+    for i in s:
+        t=i.split(" ")
+        if t!=['']:
+            list.append(t)
+    return list
+    
+  
 
 '''
 getCorpusLength(corpus)
