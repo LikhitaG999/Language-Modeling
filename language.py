@@ -96,7 +96,13 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countStartWords(corpus):
-    return
+    dict={}
+    list=[]
+    for i in corpus:
+        list.append(i[0])
+    for item in list:
+        dict[item]=list.count(item)
+    return dict
 
 
 '''
@@ -106,7 +112,17 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to (dicts mapping strs to ints)
 '''
 def countBigrams(corpus):
-    return
+    dict={}
+    for i in range(len(corpus)):
+        for j in range(len(corpus[i])-1):
+            f=corpus[i][j]
+            s=corpus[i][j+1]
+            if f not in dict:
+                dict[f]={}
+            if s not in dict[f]:
+                dict[f][s]=0
+            dict[f][s]+=1
+    return dict
 
 
 ### WEEK 2 ###
