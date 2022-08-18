@@ -71,6 +71,7 @@ def countUnigrams(corpus):
                 count[word]+=1
             else:
                 count[word]=1
+    #print(count)
     return count
 
 
@@ -81,7 +82,11 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def getStartWords(corpus):
-    return
+    list=[]
+    for i in corpus:
+        if i[0] not in list:
+            list.append(i[0])
+    return list
 
 
 '''
